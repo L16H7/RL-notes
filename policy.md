@@ -50,14 +50,9 @@ $$
 $$
 
 ### Equation time
+$v_{\pi}(s) = \mathbb{E}_{\pi} [G_t \mid S_t = s]$
 
-$$
-\begin{aligned}
-v_{\pi}(s) & = \mathbb{E}_{\pi}[G_t \mid S_t = s] \\
-
-& = \sum_{a} \pi(a \mid s) \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_{\pi}(s')]
-\end{aligned}
-$$
+$v_{\pi}(s) = \sum_{a} \pi(a \mid s) \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_{\pi}(s')]$
 
 Since this is an introduction, I will simplify this rather than strictly defining the correct terms.
 
@@ -84,13 +79,9 @@ Let's say a better player can play the winning move with a 90% probability. The 
 
 will be greater than for a random player.
 
-$
-\begin{aligned}
-v_{\pi_{better}} & = \sum_{a} \pi_{better}(a | s) \cdot r \\
-& = p(\text{move}_1) \cdot \text{reward}_1 + p(\text{move}_2) \cdot \text{reward}_2 \\
-& = 0.1 \cdot -1 + 0.9 \cdot 1 \\
-& = 0.8
-\end{aligned}
-$
+$v_{\pi_{better}} = \sum_{a} \pi_{better}(a | s) \cdot r$
+$= p(\text{move}_1) \cdot \text{reward}_1 + p(\text{move}_2) \cdot \text{reward}_2$
+$= 0.1 \cdot -1 + 0.9 \cdot 1$
+$= 0.8$
 
 The goal in RL can be thought of as improving the policy to maximize rewards.
