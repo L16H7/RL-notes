@@ -68,6 +68,8 @@ class Agent:
             q_values = current_q_values[1, batch_actions]
 
             loss = torch.nn.MSELoss()(q_values, target)
+
+            self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()
 
